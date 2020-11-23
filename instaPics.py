@@ -53,6 +53,8 @@ def fbLogin():
 def goToPage(userName):
 	search = driver.find_element_by_xpath('//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/input')
 	search.send_keys(userName)
-	search.send_keys(u'\ue007')	
+	sleep(1)
+	firstResult = driver.find_element_by_xpath('//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/div[4]/div/a[1]')
+	firstResult.click()
 fbLogin()
-goToPage('jonnycross10')
+goToPage('errmalou')
