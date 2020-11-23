@@ -41,7 +41,14 @@ def fbLogin():
 	#Click login button
 	logIn = driver.find_element_by_xpath('//*[@id="loginbutton"]')
 	logIn.click()
+	base_window = driver.window_handles[0]
+	driver.switch_to_window(driver.window_handles[0])
 
+	accept = driver.find_element_by_xpath('//*[@id="u_0_11"]/div[1]/div/div/div[3]/button[1]')
+	accept.click()
+
+def goToPage(userName):
+	search = driver.find_element_by_xpath('//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/div')
+	search.click()
 fbLogin()
-base_window = driver.window_handles[0]
-driver.switch_to_window(driver.window_handles[0])
+goToPage('jonnycross10')
