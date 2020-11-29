@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 #Configure Chrome
 option = Options()
 
+#add all of the chrome options to driver
 option.add_argument("--disable-infobars")
 option.add_argument("start-maximized")
 option.add_argument("--disable-extensions")
