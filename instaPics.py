@@ -20,6 +20,7 @@ driver = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=option)
 driver.get('https://instagram.com/accounts/login')
 sleep(2)
 
+#method for logging into instagram using facebook
 def fbLogin():
 	#Click the Facebook Login Button
 	usrField = driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[5]/button')
@@ -50,7 +51,7 @@ def fbLogin():
 	sleep(2)
 	base_window = driver.window_handles[0]
 	driver.switch_to_window(driver.window_handles[0])
-
+#after logging in this method will find the page of a given username
 def goToPage(userName):
 	search = driver.find_element_by_xpath('//*[@id="react-root"]/section/nav/div[2]/div/div/div[2]/input')
 	search.send_keys(userName)
